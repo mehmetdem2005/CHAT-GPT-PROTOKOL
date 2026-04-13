@@ -1,0 +1,31 @@
+{
+  "protocolVersion": "1.0.0",
+  "workflowId": "wf_onboarding_001",
+  "turnId": "turn_001",
+  "traceId": "trc_001",
+  "states": ["draft", "pending_review", "approved", "rejected"],
+  "transitions": [
+    {
+      "from": "draft",
+      "to": "pending_review",
+      "trigger": "submit"
+    },
+    {
+      "from": "pending_review",
+      "to": "approved",
+      "trigger": "approve"
+    }
+  ],
+  "sideEffects": [
+    {
+      "effectId": "eff_notify_owner",
+      "when": "pending_review"
+    }
+  ],
+  "compensations": [
+    {
+      "compensationId": "cmp_revoke_pending_access",
+      "forEffectId": "eff_notify_owner"
+    }
+  ]
+}
