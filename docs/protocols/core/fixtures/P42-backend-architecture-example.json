@@ -1,0 +1,33 @@
+{
+  "protocolVersion": "1.0.0",
+  "backendArchitectureId": "ba_checkout_001",
+  "turnId": "turn_001",
+  "traceId": "trc_001",
+  "serviceMap": [
+    {
+      "serviceId": "svc_checkout_api",
+      "role": "api_service"
+    },
+    {
+      "serviceId": "svc_checkout_worker",
+      "role": "background_worker"
+    }
+  ],
+  "jobTypes": [
+    {
+      "jobTypeId": "job_payment_reconciliation",
+      "mode": "async"
+    }
+  ],
+  "stateOwnership": {
+    "orderState": "svc_checkout_api",
+    "reconciliationState": "svc_checkout_worker"
+  },
+  "integrationBoundaries": [
+    {
+      "boundaryId": "b_payment_provider",
+      "serviceRef": "svc_checkout_api",
+      "externalRef": "vendor_payment"
+    }
+  ]
+}
