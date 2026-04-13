@@ -1,0 +1,49 @@
+# Global Error Code Registry v1
+
+Bu belge, sistem genelinde kullanılacak ortak hata kodlarının kayıt defteridir.
+
+## Core Codes
+- VALIDATION_ERROR
+- UNAUTHORIZED
+- FORBIDDEN
+- RESOURCE_NOT_FOUND
+- CONFLICT
+- RATE_LIMIT_EXCEEDED
+- DEPENDENCY_FAILURE
+- TIMEOUT
+- INTERNAL_ERROR
+- NOT_IMPLEMENTED
+
+## Extended Families
+### Protocol
+- PROTOCOL_SCHEMA_MISMATCH
+- PROTOCOL_VERSION_UNSUPPORTED
+- PROTOCOL_MISSING_REQUIRED_FIELD
+
+### Preview
+- PREVIEW_BUILD_FAILED
+- PREVIEW_RUNTIME_FAILED
+- PREVIEW_ROUTE_FAILED
+- PREVIEW_RENDER_FAILED
+
+### Governance
+- APPROVAL_REQUIRED
+- APPROVAL_REJECTED
+- POLICY_BLOCKED
+- RELEASE_HOLD
+- ROLLBACK_FAILED
+
+### Security and Privacy
+- INPUT_REJECTED
+- SECRET_EXPOSURE_SUSPECTED
+- TENANT_ISOLATION_BLOCKED
+- PRIVACY_REVIEW_FAILED
+
+## Required Fields for Each Error Occurrence
+- errorId
+- code
+- message
+- traceId
+- sourceRef
+- retryable
+- severity
