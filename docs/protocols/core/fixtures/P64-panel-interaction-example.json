@@ -1,0 +1,15 @@
+{
+  "protocolVersion": "1.0.0",
+  "panelInteractionId": "pi_001",
+  "turnId": "turn_001",
+  "traceId": "trc_001",
+  "actionType": "switch_viewport",
+  "initiatedBy": {
+    "actorType": "user",
+    "actorId": "usr_001"
+  },
+  "targetSurface": "preview_panel",
+  "selectedViewport": "mobile_default",
+  "result": "applied",
+  "linkedRefs": ["preview_session_001"]
+}
