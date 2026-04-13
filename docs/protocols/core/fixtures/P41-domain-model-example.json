@@ -1,0 +1,34 @@
+{
+  "protocolVersion": "1.0.0",
+  "domainModelId": "dm_checkout_001",
+  "turnId": "turn_001",
+  "traceId": "trc_001",
+  "boundedContexts": [
+    {
+      "contextId": "ctx_checkout",
+      "name": "checkout"
+    }
+  ],
+  "entities": [
+    {
+      "entityId": "ent_order",
+      "name": "Order",
+      "fields": ["id", "status", "totalAmount"]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "ent_order",
+      "to": "ent_customer",
+      "type": "belongs_to"
+    }
+  ],
+  "invariants": [
+    {
+      "invariantId": "inv_order_total_non_negative",
+      "subjectRef": "ent_order",
+      "rule": "totalAmount >= 0"
+    }
+  ],
+  "aggregateRoots": ["ent_order"]
+}
